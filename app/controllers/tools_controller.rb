@@ -1,4 +1,5 @@
 class ToolsController < ApplicationController
+
   def new
     @tool = Tool.new
   end
@@ -11,10 +12,19 @@ class ToolsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
+  def index
+    @tools = Tool.all
+  end
 
+  def show
+    @tool = Tool.find(params[:id])
+  end
+ 
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :price, :description, :availability, :picture )
+    params.require(:tool).permit(:name, :price, :description, :availability, :picture_url )
   end
+
 end
