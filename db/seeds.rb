@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+User.destroy_all
+
+user = User.create(email: "walid.majdoubi@hotmail.fr", password:"walidmajdoubi")
+Tool.create(name: "perceuse", user: user, category: category)
+
 Category.create(name: "Hand Tools", picture_url: "https://services.ibo.com/media/v1/products/images/e74c3b1f-4202-4c38-9b06-ef5da2fdd4ea/black--decker-108-pcs-hand-tool-set-1.jpeg",
   description: "Hand tools are simple tools which you use with your hands , and which are usually not powered also Hand tools is any tool that is powered by hand rather than a motor examples are chopping,
   chiseling, , cutters, files, striking tools, struck or hammered tools, screwdrivers, vises, clamps, snips, saws, and drills.")
