@@ -2,16 +2,19 @@
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
   Breakfast
 </div>
+<%# tool card start %>
 <div class="container">
   <div class="row">
     <% @tools.each do |tool| %>
-      <div class="card-product">
-        <img src="<%= tool.picture_url %>"/>
-        <div class="card-product-infos">
-          <h2><%= tool.name %></h2>
-          <p><%= tool.description %></p>
+      <div class="card col-4 m-2" style="width: 18rem;">
+        <img src="<%= tool.picture_url%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h3 class="card-title"><%= tool.name %></h5>
+          <p class="card-text"><%= tool.description %></p>
+          <h4><%= tool.price%></h4>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
-    <% end  %>
+    <% end %>
    </div>
 </div>

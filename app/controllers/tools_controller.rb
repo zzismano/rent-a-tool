@@ -32,11 +32,16 @@ class ToolsController < ApplicationController
 
     redirect_to tool_path(@tool)
   end
-  
+
+  def destroy
+    @tool = Tool.find(params[:id])
+    @tool.destroy
+  end
+
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :price, :description, :availability, :picture_url )
+    params.require(:tool).permit(:name, :price, :description, :availability, :picture_url, :category )
   end
 
 end
