@@ -5,6 +5,7 @@ class ToolsController < ApplicationController
   end
 
   def create
+    # doesn't need view page
     @tool = Tool.new(tool_params)
     if @tool.save
       redirect_to tool_path(@tool), notice: "Tool was successfully created"
@@ -31,7 +32,7 @@ class ToolsController < ApplicationController
 
     redirect_to tool_path(@tool)
   end
-
+  
   private
 
   def tool_params
