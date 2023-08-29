@@ -32,11 +32,11 @@ class ToolsController < ApplicationController
 
     redirect_to tool_path(@tool)
   end
-  
+
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :price, :description, :availability, :picture_url )
+    params.require(:tool).permit(:name, :price, :description, :availability, :picture_url, :category_id)
   end
 
 end

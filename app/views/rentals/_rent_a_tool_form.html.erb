@@ -1,0 +1,29 @@
+<div class="container">
+      <h1 class="mt-4">Rent a Tool</h1>
+
+      <%= simple_form_for([@tool, @rental]) do |f| %>
+
+
+
+      <div class="form-inputs">
+        <%= f.input :start_date %>
+
+      </div>
+
+      <div class="form-inputs">
+        <%= f.input :end_date %>
+
+      </div>
+
+       <div class="form-inputs">
+        <%= f.input :comment %>
+      </div>
+
+
+      <div class="form-actions">
+        <%= f.button :submit, class:"btn btn-primary" %>
+
+      </div>
+
+  <% end %>
+</div>

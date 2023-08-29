@@ -8,8 +8,9 @@
 
 User.destroy_all
 
+Category.destroy_all
+
 user = User.create(email: "walid.majdoubi@hotmail.fr", password:"walidmajdoubi")
-Tool.create(name: "perceuse", user: user, category: category)
 
 Category.create(name: "Hand Tools", picture_url: "https://services.ibo.com/media/v1/products/images/e74c3b1f-4202-4c38-9b06-ef5da2fdd4ea/black--decker-108-pcs-hand-tool-set-1.jpeg",
   description: "Hand tools are simple tools which you use with your hands , and which are usually not powered also Hand tools is any tool that is powered by hand rather than a motor examples are chopping,
@@ -29,3 +30,14 @@ Category.create(name: "Air Compressor Tools", picture_url: "https://dam.thdstati
 
 Category.create(name: "Outdoor Power Equipment", picture_url: "https://contentgrid.thdstatic.com/hdus/en_US/DTCCOMNEW/fetch/NexGen/ContentPage/Outdoor-Power-Guides-MOBv4.jpg", description: "Outdoor Power Equipment consist of small motors or engines primarily
   used for exterior service. The residential and commercial users use OPE for various tasks such as landscaping and maintaining lawns, gardens, and golf courses.")
+
+# Tool.create(name: "perceuse", user: user, category: category)
+
+Tool.create(name: "Hammer", description: "Estwing Hammer - 20 oz Straight Rip Claw with Smooth Face & Genuine Leather Grip - E20S" , picture_url: "https://m.media-amazon.com/images/I/613yLITO21L._AC_SL1500_.jpg", price: 20, category: "Hand Tools")
+Tool.create(name: "Lawnmower", description: "Worx WG779 40V Power Share 4.0Ah 14 Cordless Lawn Mower Batteries & Charger Included", picture_url: "https://m.media-amazon.com/images/I/71UqocRLEML._AC_SL1500_.jpg" , price: 100, category: "Outdoor Power Equipment")
+Tool.create(name: "Air compressor", description: "AstroAI Tire Inflator Portable Air Compressor Air Pump for Car Tires - Car Accessories, 12V DC Auto Pump with Digital Pressure Gauge, 100PSI with Emergency LED Light for Bicycle, Balloons",
+  picture_url: "https://m.media-amazon.com/images/I/71eHittCtZL._AC_SX679_.jpg", price: 50, category: "Air Compressor Tools")
+Tool.create(name: "Mig Welder", description: "ARCCAPTAIN 130A MIG Welder, 110V Flux Core MIG Welder/Lift TIG/Stick 3 in 1 Welding Machine with Synergy, IGBT Inverter Portable Gasless Welder Equipment with Welding Gun and 2lb Welding Wire",
+  picture_url: "https://m.media-amazon.com/images/I/717mPYgxY0L._AC_SX679_.jpg", price: 100, category: "Weldering & Soldering Tools")
+Tool.create(name: "Power Drill", description: "GardenJoy Cordless Power Drill Set: 21V Electric Drill with Fast Charger 3/8-Inch Keyless Chuck 2 Variable Speed 24+1 Torque Setting Power Tools Kit and 30pcs Drill/Driver Bits",
+  picture_url: "https://m.media-amazon.com/images/I/71UyYLHK1ZL._AC_SX679_.jpg", price: 45, category: "Power Tools")
