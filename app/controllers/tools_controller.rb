@@ -7,6 +7,7 @@ class ToolsController < ApplicationController
   def create
     # doesn't need view page
     @tool = Tool.new(tool_params)
+    @tool.user = current_user
     if @tool.save
       redirect_to tool_path(@tool), notice: "Tool was successfully created"
     else
