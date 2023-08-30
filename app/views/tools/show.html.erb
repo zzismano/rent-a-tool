@@ -7,6 +7,7 @@
           <h3 class="card-title"><%= @tool.name %></h5>
           <p class="card-text"><%= @tool.description %></p>
           <h4><%= @tool.price%></h4>
+          <%= link_to "Rent this Tool!", new_tool_rental_path(@tool), class:"btn btn-primary"  %>
           <% if current_user == @tool.user %>
             <%= link_to 'Delete', tool_path(@tool), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
           <% end %>

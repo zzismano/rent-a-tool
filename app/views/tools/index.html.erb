@@ -1,7 +1,4 @@
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  Breakfast
-</div>
 <%# tool card start %>
 <div class="container">
   <div class="row">
@@ -12,7 +9,7 @@
           <h3 class="card-title"><%= tool.name %></h5>
           <p class="card-text"><%= tool.description %></p>
           <h4><%= tool.price%></h4>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <%= link_to "Rent this Tool!", new_tool_rental_path(tool), class:"btn btn-primary"  %>
         </div>
       </div>
     <% end %>
