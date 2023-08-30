@@ -1,0 +1,37 @@
+<div class="m-3">
+  <div class="row">
+    <% tool = Tool.first%>
+    <div class="col-5">
+       <div class="card m-2">
+        <img src="<%= tool.picture_url%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h3 class="card-title"><%= tool.name %></h5>
+          <p class="card-text"><%= tool.description %></p>
+          <h4><%= tool.price%></h4>
+          <% if @user = tool.user %>
+          <%# <%=# link_to, 'Delete', tool_path(@tool), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <% end %>
+        <%# IF the user is the owner, show "nothing", %>
+        <%# IF if its a renter show a small owner card, with his name and stars%>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 d-flex flex-column">
+      <h2> X Comments </h2>
+    <%# for each review starts here %>
+      <div class="card d-flex mx-1 my-2 justify-content-between">
+        <div>
+          <p>renter commentary</p>
+          <p>score given by renter</p>
+        </div>
+        <div>
+          <div>
+          <%# renter picture goes here, rounded %>
+          </div>
+          <h3>Renter name here</h3>
+        </div>
+      </div>
+    <%# end here %>
+    </div>
+  </div>
+</div>
