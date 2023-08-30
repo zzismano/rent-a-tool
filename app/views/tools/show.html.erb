@@ -9,6 +9,7 @@
           <h4><%= @tool.price%></h4>
           <% if @user = @tool.user %>
           <%# <%=# link_to, 'Delete', tool_path(@tool), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <%= link_to "Rent this Tool!", new_tool_rental_path(@tool), class:"btn btn-primary"  %>
           <% end %>
         <%# IF the user is the owner, show "nothing", %>
         <%# IF if its a renter show a small owner card, with his name and stars%>
