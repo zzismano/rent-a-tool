@@ -9,7 +9,7 @@
           <h3 class="card-title"><%= tool.name %></h5>
           <p class="card-text"><%= tool.description %></p>
           <h4><%= tool.price%></h4>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <%= link_to "Rent this Tool!", new_tool_rental_path(tool), class:"btn btn-primary"  %>
         </div>
       </div>
     <% end %>
