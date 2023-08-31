@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   resources :tools do
     resources :rentals, only: %i[create new]
+      collection do
+        get 'categories/:category', to: "tools#categories", as: 'category'
+      end
     resources :reviews, only: %i[index create new]
   end
 

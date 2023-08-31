@@ -18,6 +18,7 @@ class ToolsController < ApplicationController
 
   def index
     @tools = Tool.all
+    @categories = Category.all
     @rental = Rental.new
   end
 
@@ -43,6 +44,13 @@ class ToolsController < ApplicationController
     if @tool.destroy
       redirect_to user_path(current_user)
     end
+  end
+
+  def categories
+    @category = params[:category]
+    @tools = Tool.where(category: @category)
+    @categories = Category.all
+    render :index
   end
 
   private
