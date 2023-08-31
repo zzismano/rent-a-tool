@@ -1,0 +1,11 @@
+<% reviews = tool.reviews %>
+<% if reviews.empty? %>
+  <p class="text-secondary ">No reviews yet</p>
+<% else %>
+  <% ratings = [] %>
+  <% reviews.each do |review| %>
+    <% ratings << review.rating %>
+  <% end %>
+  <% average_rating = ratings.sum(0.0)/ratings.size %>
+  <p>⭐️ <%= average_rating %></p>
+<% end %>
