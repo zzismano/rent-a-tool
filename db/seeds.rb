@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+p "seeding..."
 
+Rental.destroy_all
 Tool.destroy_all
 User.destroy_all
 Category.destroy_all
@@ -50,3 +52,5 @@ Rental.create!(user: user, tool: mig_welder )
 Rental.create!(user: user_2, tool: hammer )
 Rental.create!(user: user_2, tool: air_compressor )
 Rental.create!(user: user_2, tool: power_drill )
+
+p "seeding complete!"
