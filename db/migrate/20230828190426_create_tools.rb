@@ -5,7 +5,7 @@ class CreateTools < ActiveRecord::Migration[7.0]
       t.text :description
       t.references :user, null: false, foreign_key: true
       t.string :picture_url
-      t.float :price
+      t.decimal :price, scale: 2, precision: 8
       t.boolean :availability
       t.references :category, null: false, foreign_key: true
 

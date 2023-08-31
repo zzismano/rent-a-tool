@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Tool.destroy_all
 User.destroy_all
 Category.destroy_all
 
-user = User.create(email: "tester@test.test", password:"madjoubilov")
-user_2 = User.create(email: "walid.majdoubi@hotmail.fr", password:"walidmajdoubi")
+user = User.create(email: "tester@test.test", password:"madjoubilov", first_name:"Tes", last_name: "Ter")
+user_2 = User.create(email: "walid.majdoubi@hotmail.fr", password:"walidmajdoubi", first_name: "Walid", last_name: "Majdoubi")
+user_3 = User.create(email: "baboon@zoo.com", password: "baboon", first_name: "John", last_name: "Baboon", location: " Rio de Janeiro Zoo", picture_url: "https://i.natgeofe.com/n/161b508c-0d2e-4c59-8284-f759f5ab12d6/4843185_square.jpg")
 
 hand_tools = Category.create(name: "Hand Tools", picture_url: "https://services.ibo.com/media/v1/products/images/e74c3b1f-4202-4c38-9b06-ef5da2fdd4ea/black--decker-108-pcs-hand-tool-set-1.jpeg",
   description: "Hand tools are simple tools which you use with your hands , and which are usually not powered also Hand tools is any tool that is powered by hand rather than a motor examples are chopping,
@@ -34,11 +36,17 @@ outdoor_power_equipment = Category.create(name: "Outdoor Power Equipment", pictu
 
 # Tool.create(name: "perceuse", user: user, category: category)
 
-Tool.create(name: "Hammer", description: "Estwing Hammer - 20 oz Straight Rip Claw with Smooth Face & Genuine Leather Grip - E20S" , picture_url: "https://m.media-amazon.com/images/I/613yLITO21L._AC_SL1500_.jpg", price: 20, category: hand_tools, user: user)
-Tool.create(name: "Lawnmower", description: "Worx WG779 40V Power Share 4.0Ah 14 Cordless Lawn Mower Batteries & Charger Included", picture_url: "https://m.media-amazon.com/images/I/71UqocRLEML._AC_SL1500_.jpg" , price: 100, category:outdoor_power_equipment, user: user_2)
-Tool.create(name: "Air compressor", description: "AstroAI Tire Inflator Portable Air Compressor Air Pump for Car Tires - Car Accessories, 12V DC Auto Pump with Digital Pressure Gauge, 100PSI with Emergency LED Light for Bicycle, Balloons",
+hammer = Tool.create(name: "Hammer", description: "Estwing Hammer - 20 oz Straight Rip Claw with Smooth Face & Genuine Leather Grip - E20S" , picture_url: "https://m.media-amazon.com/images/I/613yLITO21L._AC_SL1500_.jpg", price: 20, category: hand_tools, user: user)
+lawnmowner = Tool.create(name: "Lawnmower", description: "Worx WG779 40V Power Share 4.0Ah 14 Cordless Lawn Mower Batteries & Charger Included", picture_url: "https://m.media-amazon.com/images/I/71UqocRLEML._AC_SL1500_.jpg" , price: 100, category:outdoor_power_equipment, user: user_2)
+air_compressor = Tool.create(name: "Air compressor", description: "AstroAI Tire Inflator Portable Air Compressor Air Pump for Car Tires - Car Accessories, 12V DC Auto Pump with Digital Pressure Gauge, 100PSI with Emergency LED Light for Bicycle, Balloons",
   picture_url: "https://m.media-amazon.com/images/I/71eHittCtZL._AC_SX679_.jpg", price: 50, category: air_compressor_tools, user: user)
-Tool.create(name: "Mig Welder", description: "ARCCAPTAIN 130A MIG Welder, 110V Flux Core MIG Welder/Lift TIG/Stick 3 in 1 Welding Machine with Synergy, IGBT Inverter Portable Gasless Welder Equipment with Welding Gun and 2lb Welding Wire",
+mig_welder = Tool.create(name: "Mig Welder", description: "ARCCAPTAIN 130A MIG Welder, 110V Flux Core MIG Welder/Lift TIG/Stick 3 in 1 Welding Machine with Synergy, IGBT Inverter Portable Gasless Welder Equipment with Welding Gun and 2lb Welding Wire",
   picture_url: "https://m.media-amazon.com/images/I/717mPYgxY0L._AC_SX679_.jpg", price: 100, category: weldering_and_soldering_tools, user: user_2)
-Tool.create(name: "Power Drill", description: "GardenJoy Cordless Power Drill Set: 21V Electric Drill with Fast Charger 3/8-Inch Keyless Chuck 2 Variable Speed 24+1 Torque Setting Power Tools Kit and 30pcs Drill/Driver Bits",
+power_drill = Tool.create(name: "Power Drill", description: "GardenJoy Cordless Power Drill Set: 21V Electric Drill with Fast Charger 3/8-Inch Keyless Chuck 2 Variable Speed 24+1 Torque Setting Power Tools Kit and 30pcs Drill/Driver Bits",
   picture_url: "https://m.media-amazon.com/images/I/71UyYLHK1ZL._AC_SX679_.jpg", price: 45, category: power_tools, user: user)
+
+Rental.create!(user: user, tool: lawnmowner )
+Rental.create!(user: user, tool: mig_welder )
+Rental.create!(user: user_2, tool: hammer )
+Rental.create!(user: user_2, tool: air_compressor )
+Rental.create!(user: user_2, tool: power_drill )

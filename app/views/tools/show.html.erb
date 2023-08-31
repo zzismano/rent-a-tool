@@ -1,14 +1,20 @@
 <div class="m-3">
   <div class="row">
     <div class="col-5">
-       <div class="card m-2">
-        <img src="<%= @tool.picture_url%>" class="card-img-top" alt="...">
+       <div class="card shadow p-3 m-3 bg-body-tertiary rounded-4">
+        <img src="<%= @tool.picture_url%>" class="card-img-top mb-3" alt="...">
         <div class="card-body">
           <h3 class="card-title"><%= @tool.name %></h5>
+          <div class="d-flex align-items-center my-3">
+            <img class="avatar" alt="avatar" src="<%=@tool.user.picture_url%>">
+            <p class="mx-1 my-auto"><%= "#{@tool.user.first_name} #{@tool.user.last_name}"%><p>
+          </div>
           <p class="card-text"><%= @tool.description %></p>
-          <h4><%= @tool.price%></h4>
-          <% if @user = @tool.user %>
-          <%# <%=# link_to, 'Delete', tool_path(@tool), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <h4>$<%= @tool.price %></h4>
+          <% if current_user != @tool.user %>
+          <%= link_to "Rent this Tool!", new_tool_rental_path(@tool), class:"btn btn-primary"  %>
+          <% else %>
+            <%= link_to 'Delete', tool_path(@tool), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
           <% end %>
         <%# IF the user is the owner, show "nothing", %>
         <%# IF if its a renter show a small owner card, with his name and stars%>
@@ -18,16 +24,10 @@
     <div class="col-7 d-flex flex-column">
       <h2> X Comments </h2>
     <%# for each review starts here %>
-      <div class="card d-flex mx-1 my-2 justify-content-between">
+      <div class="card shadow p-3 m-3 bg-body-tertiary rounded-4 d-flex  justify-content-between">
         <div>
           <p>renter commentary</p>
           <p>score given by renter</p>
-        </div>
-        <div>
-          <div>
-          <%# renter picture goes here, rounded %>
-          </div>
-          <h3>Renter name here</h3>
         </div>
       </div>
     <%# end here %>

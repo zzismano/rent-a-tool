@@ -6,6 +6,14 @@ class RentalsController < ApplicationController
   #     t.references :tool, null: false, foreign_key: true
   #     t.text :comment
 
+  def index
+    @rentals = Rental.all
+    @user = current_user
+    # @user_rentals = Rental.where(user_id: current_user.id)
+    # @tool_rentals = Rental.joins(:tool).where(tools: { user_id: current_user.id })
+  end
+
+
   def new
     @rental = Rental.new
     @tool = Tool.find(params[:tool_id])
@@ -26,6 +34,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:rental).permit(:start_date, :end_date, :comment)
+    params.require(:rental).permit(:start_date, :end_date, :comment, :tool_id, :user_id)
   end
 end

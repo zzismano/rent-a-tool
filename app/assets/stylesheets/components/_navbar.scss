@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(239, 217, 49);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +8,12 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
+  border-radius: 50%;
+
+}
+
+
+.logo-font {
+  font-family: 'Proza Libre', sans-serif;
 }
