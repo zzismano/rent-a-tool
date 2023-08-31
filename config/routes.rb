@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
 
   resources :tools do
-    resources :rentals, only: %i[create new]
+    resources :rentals, only: %i[create new index]
   end
-  
+
   resources :users, only: %i[show]
-  
+
 end

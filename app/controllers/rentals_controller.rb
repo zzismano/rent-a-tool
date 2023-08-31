@@ -6,6 +6,13 @@ class RentalsController < ApplicationController
   #     t.references :tool, null: false, foreign_key: true
   #     t.text :comment
 
+  def index
+    @rentals = Rental.all
+    @user_rentals = Rental.where(user_id: current_user.id)
+    @tool_rentals = Rental.joins(:tool).where(tools: { user_id: current_user.id })
+  end
+
+
   def new
     @rental = Rental.new
     @tool = Tool.find(params[:tool_id])
