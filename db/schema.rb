@@ -38,9 +38,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_191828) do
     t.text "content"
     t.integer "rating"
     t.bigint "tool_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tool_id"], name: "index_reviews_on_tool_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "tools", force: :cascade do |t|
@@ -76,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_191828) do
   add_foreign_key "rentals", "tools"
   add_foreign_key "rentals", "users"
   add_foreign_key "reviews", "tools"
+  add_foreign_key "reviews", "users"
   add_foreign_key "tools", "categories"
   add_foreign_key "tools", "users"
 end
