@@ -17,6 +17,7 @@ class ToolsController < ApplicationController
 
   def index
     @tools = Tool.all
+    @categories = Category.all
   end
 
   def show
@@ -37,6 +38,13 @@ class ToolsController < ApplicationController
   def destroy
     @tool = Tool.find(params[:id])
     @tool.destroy
+  end
+
+  def categories
+    @category = params[:category]
+    @tools = Tool.where(category: @category)
+    @categories = Category.all
+    render :index
   end
 
   private
