@@ -17,6 +17,7 @@ class ToolsController < ApplicationController
 
   def index
     @tools = Tool.all
+    @rental = Rental.new
   end
 
   def show
