@@ -8,8 +8,9 @@ class RentalsController < ApplicationController
 
   def index
     @rentals = Rental.all
-    @user_rentals = Rental.where(user_id: current_user.id)
-    @tool_rentals = Rental.joins(:tool).where(tools: { user_id: current_user.id })
+    @user = current_user
+    # @user_rentals = Rental.where(user_id: current_user.id)
+    # @tool_rentals = Rental.joins(:tool).where(tools: { user_id: current_user.id })
   end
 
 

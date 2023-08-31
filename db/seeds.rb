@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Tool.destroy_all
 User.destroy_all
 Category.destroy_all
 
@@ -44,8 +45,8 @@ mig_welder = Tool.create(name: "Mig Welder", description: "ARCCAPTAIN 130A MIG W
 power_drill = Tool.create(name: "Power Drill", description: "GardenJoy Cordless Power Drill Set: 21V Electric Drill with Fast Charger 3/8-Inch Keyless Chuck 2 Variable Speed 24+1 Torque Setting Power Tools Kit and 30pcs Drill/Driver Bits",
   picture_url: "https://m.media-amazon.com/images/I/71UyYLHK1ZL._AC_SX679_.jpg", price: 45, category: power_tools, user: user)
 
-Rental.create(user_id: user, tool_id: lawnmowner )
-Rental.create(user_id: user, tool_id: mig_welder )
-Rental.create(user_id: user_2, tool_id: hammer )
-Rental.create(user_id: user_2, tool_id: air_compressor )
-Rental.create(user_id: user_2, tool_id: power_drill )
+Rental.create!(user: user, tool: lawnmowner )
+Rental.create!(user: user, tool: mig_welder )
+Rental.create!(user: user_2, tool: hammer )
+Rental.create!(user: user_2, tool: air_compressor )
+Rental.create!(user: user_2, tool: power_drill )

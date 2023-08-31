@@ -13,11 +13,18 @@
     </div>
   </div>
   <div class="row">
-  <h1>Toolbox</h1>
+  <h2>Toolbox</h2>
   <% if @user.tools %>
       <% @user_tools.each do |tool| %>
       <%= render "shared/toolcard", tool: tool %>
       <% end %>
+    <% end %>
+  </div>
+  <div>
+    <h2>My rentals</h2>
+    <% @user.rentals.each do |rental| %>
+      <%= rental.tool.name %>
+      <%= rental.tool.user.first_name %>
     <% end %>
   </div>
 </div>
