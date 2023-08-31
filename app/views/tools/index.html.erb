@@ -7,7 +7,7 @@
     <% @tools.each do |tool| %>
       <div class="card shadow p-3 m-3 bg-body-tertiary rounded-4 col-4 m-2 p-2" style="width: 18rem;">
         <%= link_to tool_path(tool) do %>
-         <img src="<%= tool.picture_url%>" class="card-img-top img-fluid" alt="...">
+         <img src="<%= tool.picture_url%>" class="card-img-top img-tools" alt="...">
         <% end %>
         <div class="card-body">
           <h3 class="card-title"><%= tool.name %></h3>
