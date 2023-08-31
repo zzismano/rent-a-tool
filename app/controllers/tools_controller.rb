@@ -1,4 +1,5 @@
 class ToolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def new
     @tool = Tool.new
@@ -38,6 +39,10 @@ class ToolsController < ApplicationController
   def destroy
     @tool = Tool.find(params[:id])
     @tool.destroy
+
+    if @tool.destroy
+      redirect_to user_path(current_user)
+    end
   end
 
   private

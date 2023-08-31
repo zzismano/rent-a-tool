@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_191828) do
     t.text "description"
     t.bigint "user_id", null: false
     t.string "picture_url"
-    t.float "price"
+    t.decimal "price", precision: 8, scale: 2
     t.boolean "availability"
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
