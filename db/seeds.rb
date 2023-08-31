@@ -10,8 +10,8 @@ Tool.destroy_all
 User.destroy_all
 Category.destroy_all
 
-user = User.create(email: "tester@test.test", password:"madjoubilov")
-user_2 = User.create(email: "walid.majdoubi@hotmail.fr", password:"walidmajdoubi")
+user = User.create(email: "tester@test.test", password:"madjoubilov", first_name:"Tes", last_name: "Ter")
+user_2 = User.create(email: "walid.majdoubi@hotmail.fr", password:"walidmajdoubi", first_name: "Walid", last_name: "Majdoubi")
 user_3 = User.create(email: "baboon@zoo.com", password: "baboon", first_name: "John", last_name: "Baboon", location: " Rio de Janeiro Zoo", picture_url: "https://i.natgeofe.com/n/161b508c-0d2e-4c59-8284-f759f5ab12d6/4843185_square.jpg")
 
 hand_tools = Category.create(name: "Hand Tools", picture_url: "https://services.ibo.com/media/v1/products/images/e74c3b1f-4202-4c38-9b06-ef5da2fdd4ea/black--decker-108-pcs-hand-tool-set-1.jpeg",

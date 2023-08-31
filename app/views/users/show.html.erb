@@ -21,10 +21,19 @@
     <% end %>
   </div>
   <div>
+    <div class="row d-flex justify-content-center">
     <h2>My rentals</h2>
-    <% @user.rentals.each do |rental| %>
-      <%= rental.tool.name %>
-      <%= rental.tool.user.first_name %>
-    <% end %>
+      <% @user.rentals.each do |rental| %>
+        <div class="shadow p-3 m-3 bg-body-tertiary rounded-4 col-8">
+          <%= rental.tool.name %>
+          <%= rental.tool.picture_url %>
+          <%= rental.tool.description %>
+          <%= rental.start_date %>
+          <%= rental.end_date %>
+          <%= rental.tool.user.first_name %>
+          <%= rental.tool.user.picture_url %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
