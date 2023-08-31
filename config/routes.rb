@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :tools do
     resources :rentals, only: %i[create new]
+    resources :reviews, only: %i[index create new]
   end
 
   resources :users, only: %i[show]
