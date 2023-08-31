@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row" style="">
-    <div  class="shadow p-3 m-3 bg-body-tertiary rounded-4 align-items-center col-12 col-md-6 col-lg-4"  >
+    <div  class="shadow p-3 m-3 bg-body-tertiary rounded-4 align-items-center col-12 col-md-6 col-lg-6"  >
       <%# <img src="" alt="profile picture" class="rounded-circle img-thumbnail h-1 w-1"> %>
       <div class="d-flex mb-5 align-items-center">
         <img class="avatar-large" alt="avatar-large" src="<%=@user.picture_url%>">
@@ -20,20 +20,55 @@
       <% end %>
     <% end %>
   </div>
+
+<h2>My rentals</h2>
+<div class="accordion" id="accordionExample">
+  <% @user.rentals.each_with_index do |rental, index| %>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="<%="heading#{User::HACKY[index]}"%>">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="<%="#collapse#{User::HACKY[index]}"%>" aria-expanded="true" aria-controls="<%="collapse#{User::HACKY[index]}"%>">
+          <%= rental.tool.name %>
+        </button>
+      </h2>
+      <div id="<%="collapse#{User::HACKY[index]}"%>" class="accordion-collapse collapse" aria-labelledby="<%="heading#{User::HACKY[index]}"%>" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong class="row">
+            <div class="card col-3" style="width: 18rem;">
+              <img src="<%= rental.tool.picture_url%>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title"><%= rental.tool.name %></h5>
+                <p class="card-text"><%= rental.tool.description %></p>
+                <h4><%= rental.tool.price %></h4>
+              </div>
+            </div>
+            <div class="col-6 d-flex align-items-end">
+              <div class="d-flex flex-column justify-content-end align-items-end">
+                <%= rental.comment %>
+                <div class="shadow mt-50% p-3 m-3 bg-body-tertiary rounded-4 align-items-center">
+                  <%# <img src="" alt="profile picture" class="rounded-circle img-thumbnail h-1 w-1"> %>
+                    <div class="d-flex mb-5 align-items-center">
+                      <img class="avatar-large" alt="avatar-large" src="<%=rental.tool.user.picture_url%>">
+                      <div class=" d-flex flex-column justify-content-start">
+                        <h1><%= rental.tool.user.first_name %><span> </span><%=rental.tool.user.last_name %></h1>
+                        <p>Located in <%= rental.tool.user.location %></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </strong>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
   <div>
     <div class="row d-flex justify-content-center">
-    <h2>My rentals</h2>
-      <% @user.rentals.each do |rental| %>
         <div class="shadow p-3 m-3 bg-body-tertiary rounded-4 col-8">
-          <%= rental.tool.name %>
-          <%= rental.tool.picture_url %>
-          <%= rental.tool.description %>
-          <%= rental.start_date %>
-          <%= rental.end_date %>
-          <%= rental.tool.user.first_name %>
-          <%= rental.tool.user.picture_url %>
+
+
         </div>
-      <% end %>
     </div>
   </div>
 </div>

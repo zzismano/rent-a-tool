@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  HACKY = %w[One Two Three Four Five Six seven eight nine ten]
+  # hacky is its nickname, ACORDION_WORKAROUND is its given name, sorry heh
   has_many :rentals
   has_many :tools
   has_many :reviews
