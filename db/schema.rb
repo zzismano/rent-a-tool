@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_191828) do
     t.string "first_name"
     t.string "last_name"
     t.string "location"
-    t.string "picture_url"
+    t.string "picture_url", default: "https://static.vecteezy.com/system/resources/previews/021/548/095/original/default-profile-picture-avatar-user-avatar-icon-person-icon-head-icon-profile-picture-icons-default-anonymous-user-male-and-female-businessman-photo-placeholder-social-network-avatar-portrait-free-vector.jpg"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
