@@ -41,20 +41,20 @@
                 <h4><%= rental.tool.price %></h4>
               </div>
             </div>
-            <div class="col-6 d-flex align-items-end">
-              <div class="d-flex flex-column justify-content-end align-items-end">
-                <%= rental.comment %>
-                <div class="shadow mt-50% p-3 m-3 bg-body-tertiary rounded-4 align-items-center">
-                  <%# <img src="" alt="profile picture" class="rounded-circle img-thumbnail h-1 w-1"> %>
-                    <div class="d-flex mb-5 align-items-center">
-                      <img class="avatar-large" alt="avatar-large" src="<%=rental.tool.user.picture_url%>">
-                      <div class=" d-flex flex-column justify-content-start">
-                        <h1><%= rental.tool.user.first_name %><span> </span><%=rental.tool.user.last_name %></h1>
-                        <p>Located in <%= rental.tool.user.location %></p>
-                      </div>
+            <div class="col-6 d-flex flex-column align-items-end">
+              <div class="d-flex justify-content-center align-self-start"> <p>a lot of things here just to make space lets write more so if theres more i dont even know anymore</p><%= rental.comment %> </div>
+              <div class="shadow mt-50% p-3 m-3 bg-body-tertiary rounded-4 align-items-center">
+                <%# <img src="" alt="profile picture" class="rounded-circle img-thumbnail h-1 w-1"> %>
+                  <div class="d-flex mb-5 align-items-center">
+                    <img class="avatar-large" alt="avatar-large" src="<%=rental.tool.user.picture_url%>">
+                    <div class=" d-flex flex-column justify-content-start">
+                      <h1><%= rental.tool.user.first_name %><span> </span><%=rental.tool.user.last_name %></h1>
+                      <p>Located in <%= rental.tool.user.location %></p>
                     </div>
                   </div>
                 </div>
+              </div>
+            <div class="col-3 d-flex align">
             </div>
           </strong>
         </div>
