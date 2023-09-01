@@ -13,8 +13,10 @@
         <strong>
           <h3 class="card-title text-center"><%= tool.name %></h3>
           </strong>
+          <%= render "shared/rating", tool: tool %>
           <p class="card-text justify-text"><%= tool.description %></p>
           <h4 class= "card-price text-center">$<%= tool.price%></h4>
+
           <% if current_user != tool.user %>
             <%= link_to "Rent this Tool!", new_tool_rental_path(tool), class:"btn btn-primary mb-2 "  %>
           <% end %>

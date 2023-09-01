@@ -25,7 +25,7 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     @rental.tool = @tool
     if @rental.save
-      redirect_to tool_path(@rental.tool), notice: "Tool rental was successfully created"
+      redirect_to user_path(@rental.user), notice: "Tool rental was successfully created"
     else
       render :new, status: :unprocessable_entity
     end

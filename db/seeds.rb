@@ -46,11 +46,27 @@ mig_welder = Tool.create(name: "Mig Welder", description: "ARCCAPTAIN 130A MIG W
   picture_url: "https://m.media-amazon.com/images/I/717mPYgxY0L._AC_SX679_.jpg", price: 100, category: weldering_and_soldering_tools, user: user_2)
 power_drill = Tool.create(name: "Power Drill", description: "GardenJoy Cordless Power Drill Set: 21V Electric Drill with Fast Charger 3/8-Inch Keyless Chuck 2 Variable Speed 24+1 Torque Setting Power Tools Kit and 30pcs Drill/Driver Bits",
   picture_url: "https://m.media-amazon.com/images/I/71UyYLHK1ZL._AC_SX679_.jpg", price: 45, category: power_tools, user: user)
+screwdriver = Tool.create(name: "Screwdriver", description: "Klein Tools 32305 Multi-bit Ratcheting Screwdriver, 15-in-1 Tool with Phillips, Slotted, Square, Torx and Combo Bits and 1/4-Inch Nut Driver",
+  picture_url: "https://m.media-amazon.com/images/I/51jA6YSPgmL._AC_SX679_.jpg", price: 20, category: hand_tools, user: user_3)
+wrench = Tool.create(name: "Wrench", description: "Crescent 4 Adjustable Black Oxide Wrench - Carded - AT24VS",
+  picture_url: "https://m.media-amazon.com/images/I/41lJL+WoCNL._AC_SX679_.jpg", price: 10, category: hand_tools, user: user)
+pliers = Tool.create(name: "Pliers", description: "CHANNELLOCK HD-1 Ultimate 4-Piece Pliers Set | Made in USA | Forged High Carbon Steel | Includes Tongue & Groove, Diagonal Cutting, Long Nose and Slip Joint Pliers",
+  picture_url: "https://m.media-amazon.com/images/I/71qAV-JUc8L._AC_SX679_.jpg", price: 12, category: hand_tools, user: user_2)
+multi_tool = Tool.create(name: "Multitool", description: "Ryobi 18V Multi Tool", picture_url: "https://m.media-amazon.com/images/I/31ycvmDWQ9L._AC_.jpg",
+  price: 50, category: power_tools, user: user)
+
 
 Rental.create!(user: user, tool: lawnmower, comment: "we love mowing the amazon forest", start_date: "2023-08-20", end_date: "2023-08-01")
 Rental.create!(user: user, tool: mig_welder, comment: "i promise the welder will not lose fingers... this time", start_date: "2023-08-20", end_date: "2023-10-20")
 Rental.create!(user: user_2, tool: hammer, comment: "bang bang bang bang bang bang man i loveee hammers", start_date: "2023-08-20", end_date: "2023-09-20")
 Rental.create!(user: user_2, tool: air_compressor, comment: "what is even air compressor anyway?", start_date: "2023-08-20", end_date: "2023-08-24")
 Rental.create!(user: user_2, tool: power_drill, comment: "this is not a dr... actually", start_date: "2023-08-20", end_date: "2023-08-28")
+
+
+Review.create(content: "This lawn mower cut every single blade of grass in my garden.", rating: 5, tool: lawnmowner, user: user_3)
+Review.create(content: "A very strong hammer, excellent grip", rating: 4, tool: hammer, user: user_2)
+Review.create(content: "Good, but didn't drill all the way through to my neighbor's as I hoped it would", rating: 3, tool: power_drill, user: user)
+Review.create(content: "Never thought I would be welding but renting this tool helped me discover my real passion in life", rating: 4, tool: mig_welder, user: user)
+Review.create(content: "Cutting the grass in my field with this lawnmower evoked beautiful smells of grass, dirt and petrichor", rating: 5, tool: lawnmowner, user: user_2)
 
 p "seeding complete!"
