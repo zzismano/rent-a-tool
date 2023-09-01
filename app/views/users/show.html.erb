@@ -55,7 +55,7 @@
                 </div>
               </div>
             <div class="col-3 d-flex align">
-              <% if Date.today < rental.end_date %>
+              <% if Date.today > rental.end_date %>
                 <%= link_to "Leave a Review?", new_tool_review_path(rental.tool), class:"btn btn-warning" %>
               <% end %>
             </div>
