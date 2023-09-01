@@ -31,7 +31,7 @@
         <div class="card-body d-flex flex-column justify-content-end">
           <ul class="list-group list-group-flush">
             <% @tool.reviews.each do |review| %>
-              <li class="list-group-item"><%= image_tag current_user.picture_url, class: "avatar"%> <%= review.user.first_name %> <%= review.user.last_name %> <%= "says:" %> "<%= review.content %>" <%="⭐️" * review.rating %></li>
+              <li class="list-group-item"><%= image_tag @tool.user.picture_url, class: "avatar"%> <%= review.user.first_name %> <%= review.user.last_name %> <%= "says:" %> "<%= review.content %>" <%="⭐️" * review.rating %></li>
             <% end %>
         </div>
       </div>
