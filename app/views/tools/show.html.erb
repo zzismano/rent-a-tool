@@ -25,12 +25,14 @@
       </div>
     </div>
     <div class="col-7 d-flex flex-column">
-      <h2> X Comments </h2>
+      <h2> Tool Reviews </h2>
     <%# for each review starts here %>
       <div class="card shadow p-3 m-3 bg-body-tertiary rounded-4 d-flex  justify-content-between">
-        <div>
-          <p>renter commentary</p>
-          <p>score given by renter</p>
+        <div class="card-body d-flex flex-column justify-content-end">
+          <ul class="list-group list-group-flush">
+            <% @tool.reviews.each do |review| %>
+              <li class="list-group-item"><%= image_tag current_user.picture_url, class: "avatar"%> <%= review.user.first_name %> <%= review.user.last_name %> <%= "says:" %> "<%= review.content %>" <%="⭐️" * review.rating %></li>
+            <% end %>
         </div>
       </div>
     <%# end here %>
