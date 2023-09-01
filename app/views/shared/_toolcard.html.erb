@@ -4,6 +4,7 @@
   <% end %>
   <div class="card-body">
     <h3 class="card-title"><%= tool.name %></h5>
+    <%= render "shared/rating", tool: tool%>
     <p class="card-text"><%= tool.description %></p>
     <h4><%= tool.price%></h4>
     <% if current_user == tool.user %>
